@@ -75,6 +75,9 @@ int main () {
 	
 	
 	DIO_SetPinDirection(PIN12,OUTPUT);
+	DIO_SetPinDirection(PIN13,OUTPUT);
+	DIO_SetPinDirection(PIN14,OUTPUT);
+	
 	DIO_SetPinDirection(PIN16,OUTPUT);
 	DIO_SetPinDirection(PIN17,OUTPUT);
 	DIO_SetPinDirection(PIN18,OUTPUT);
@@ -83,20 +86,23 @@ int main () {
 	while (1){
 		distance = US_measure();
 		
-		if ( distance >40 && distance  < 60) { //slow state 
+		if ( distance >40 && distance  < 80) { //slow state 
 			
 			DIO_WritePin(PIN16,LOW);DIO_WritePin(PIN17,HIGH);DIO_WritePin(PIN18,LOW);
+			DIO_WritePin(PIN12,LOW);DIO_WritePin(PIN13,HIGH);DIO_WritePin(PIN14,LOW);
 			
 		}
 		else if ( distance  < 40) //stop state 
 		{
 			
 			DIO_WritePin(PIN16,LOW);DIO_WritePin(PIN17,LOW);DIO_WritePin(PIN18,HIGH);
+			DIO_WritePin(PIN12,LOW);DIO_WritePin(PIN13,LOW);DIO_WritePin(PIN14,HIGH);
 		} 
 		else  //normal state
 		{
 			
 			DIO_WritePin(PIN16,HIGH);DIO_WritePin(PIN17,LOW);DIO_WritePin(PIN18,LOW);
+			DIO_WritePin(PIN12,HIGH);DIO_WritePin(PIN13,LOW);DIO_WritePin(PIN14,LOW);
 		} 
 		
 //us_detect ();

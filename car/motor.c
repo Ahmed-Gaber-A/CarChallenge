@@ -9,8 +9,8 @@ void motor_init(){
     DIO_SetPinDirection( PIN26 , OUTPUT ); //motor1 A dir
     DIO_SetPinDirection( PIN27 , OUTPUT ); //motor1 B dir
 
-    DIO_SetPinDirection( PIN29 , OUTPUT ); //motor1 en
-    DIO_SetPinDirection( PIN28 , OUTPUT ); //motor2 en
+   // DIO_SetPinDirection( PIN29 , OUTPUT ); //motor1 en
+   // DIO_SetPinDirection( PIN28 , OUTPUT ); //motor2 en
 
 }
 
